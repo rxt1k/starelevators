@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Elevator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        .slideshow {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            padding: 60px;
+            color: white;
+        }
+        .slide {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+        .active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: #ffcc00;
+            color: #343a40;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+    
+    <div class="container">
+        <div class="slideshow">
+            <div class="slide active">
+                <h1>Welcome to Star Elevator</h1>
+                <p>Your trusted partner in elevator installation, repair, and maintenance.</p>
+                <a href="#services" class="button">Explore Services</a>
+            </div>
+            <div class="slide">
+                <h2>About Us</h2>
+                <p>Star Elevator is a leading provider of elevator installation, repair, and maintenance services in Indore. With over 100 elevators under our management, we ensure safety, efficiency, and reliability for our clients.</p>
+            </div>
+            <div class="slide">
+                <h2>Our Services</h2>
+                <p>We offer top-notch services, including elevator installation, routine maintenance, and emergency repairs to keep your elevators running smoothly.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach((slide, index) => {
+                setTimeout(() => {
+                    slide.classList.add("active");
+                }, index * 700);
+            });
+        });
+    </script>
+</body>
+</html>
